@@ -85,20 +85,14 @@ app.post("/", function(req, res){
 });
 
 app.post("/delete", function(req, res){
-	//var checkedItem = req.body.checkboxItem;
-	// Item.deleteOne({_id: checkedItem}, function(err){
-	// 	if (err) {
-	// 		console.log(err);
-	// 	} else {
-	// 		console.log("Deleted");
-	// 	}
-	// });
+	var checkedItem = req.body.checkboxItem;
+	
 	var minusItem = req.body.deleteIt;
 	var delListTitle = req.body.list;
 
 	if (delListTitle === "Today") {
-		Item.deleteOne({_id: minusItem}, function(err){
-		// or Item.findByIdAndRemove(minusItem, function(err)){
+		Item.deleteOne({_id: checkedItem}, function(err){
+			// or Item.findByIdAndRemove(minusItem, function(err)){
 			if (err) {
 				console.log(err);
 			} else {

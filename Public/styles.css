@@ -67,22 +67,6 @@ button {
   padding-bottom: 6px;
   border-width: 0;
 }
-button.deleteButton{
-  min-height: 25px;
-  max-height: 35px;
-  width: 30px;
-  border-radius: 50%;
-  border-color: transparent;
-  background-color: red;
-  color: #fff;
-  font-size: 30px;
-  padding-bottom: 6px;
-  border-width: 0;
-  text-align: center;
-  line-height: 5px;
-  position: absolute;
-  margin-left: 25%;
-}
 
 input[type="text"] {
   text-align: center;
