@@ -71,6 +71,7 @@ app.post("/", function(req, res){
 	const itemNew = new Item({
 		name: listItem
 	});
+
 	if (listTitle === "Today") {
 		itemNew.save();
 		res.redirect("/");
@@ -87,12 +88,11 @@ app.post("/", function(req, res){
 app.post("/delete", function(req, res){
 	var checkedItem = req.body.checkboxItem;
 	
-	var minusItem = req.body.deleteIt;
 	var delListTitle = req.body.list;
 
 	if (delListTitle === "Today") {
 		Item.deleteOne({_id: checkedItem}, function(err){
-			// or Item.findByIdAndRemove(minusItem, function(err)){
+			// or Item.findByIdAndRemove(checkedItem, function(err)){
 			if (err) {
 				console.log(err);
 			} else {
